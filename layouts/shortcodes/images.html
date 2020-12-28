@@ -1,0 +1,34 @@
+<!-- image -->
+{{ $postname := index (first 1 (last 2 (split .Page.RelPermalink "/"))) 0 }}
+{{ $catname := index (last 1 (first 3 (split .Page.RelPermalink "/"))) 0 }}
+<div class="columns">
+	{{ if .IsNamedParams }}
+		<!-- named, check for src -->
+		{{ if .Get "src" }}
+			{{ $files := split (.Get "src") ";" }}
+
+			{{ if .Get "buy" }}
+				{{ $links := split (.Get "buy") ";" }}
+				{{ if eq (len $links) (len $files) }}
+					{{ range $index, $element := $files }}
+					<div class="column">
+						{{ partial "micro/image_with_link" (dict "filename" .) }}
+						{{ with (index $links $index) }}
+						{{ if ne . "" }}<a href="{{ . }}" class="buy-now" target=_blank><i class="fa fa-shopping-cart"></i></a>{{ end }}
+						{{ end }}
+					</div>
+					{{ end }}
+				{{ else }}
+				Number of buy links is not the same as number of images. plz fix.
+				{{ end }}
+			{{ end }}
+		{{ end }}
+	{{ else }}
+		<!-- not named -->
+		{{ range .Params }}
+		<div class="column">
+			{{ partial "micro/image_with_link" (dict "filename" .) }}
+		</div>
+		{{ end }}
+	{{ end }}
+</div>

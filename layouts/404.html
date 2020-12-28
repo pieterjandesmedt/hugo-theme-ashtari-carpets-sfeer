@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+{{ partial "head" . }}
+<script type="text/javascript">
+	var language = localStorage.getItem('language') || 'nl';
+	if (language === 'nl') language = '';
+	window.location.replace(language + '{{ "404" | relURL }}');
+</script>
+<body class="single-page">
+
+	<header>
+		{{ partial "nav.html" . }}
+	</header>
+
+	<div id="content">
+		<div class="container is-widescreen">
+
+			<div class="row">
+
+				<div class="col c8" id="blog-post">
+
+					<h1>{{ i18n "_Error 404 - Page not found" }}</h1>
+
+					<p>{{ i18n "_We are sorry - this page is not here anymore." }}</p>
+
+					{{- partial "micro/image" (dict "filename" "flying-carpet.png") -}}
+
+				</div>
+				<div id="sidebar" class="col space1 c3">
+					{{ partial "sidebar.html" . }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{{ partial "footer.html" . }}
+
+	{{ partial "scripts.html" . }}
+	{{ partial "scripts_single_page.html" . }}
+</body>
+</html>

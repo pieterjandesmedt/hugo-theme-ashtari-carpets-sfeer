@@ -1,0 +1,24 @@
+{{ partial "scripts/css_loader" . }}
+
+{{ template "_internal/google_analytics.html" . }}
+
+{{ if .IsHome }}
+	{{ partial "scripts/vimeo" . }}
+	{{ partial "scripts/instafeed" . }}
+{{ end }}
+
+{{ partial "scripts/housekeeping" . }}
+{{ partial "scripts/opening_hours" . }}
+
+{{ if not .IsHome }}
+	{{ partial "scripts/lunr" . }}
+{{ end }}
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+<script type="text/javascript">
+	const observer = lozad('.lozad', {
+		rootMargin: '100px 0px', // syntax similar to that of CSS Margin
+	});
+	observer.observe();
+</script>

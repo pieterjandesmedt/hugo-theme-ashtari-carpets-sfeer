@@ -1,0 +1,7 @@
+{{ if isset .Site.Params "vimeo" }}
+{{ if .Site.Params.vimeo.enable }}
+<section class="section mb-6 px-0">
+	{{ partial "micro/vimeo" (dict "id" .Site.Params.vimeo.id "ratio" (default "" .Site.Params.vimeo.ratio) )}}
+</section>
+{{ end }}
+{{ end }}

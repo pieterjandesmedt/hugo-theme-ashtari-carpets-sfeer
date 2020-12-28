@@ -1,0 +1,19 @@
+{{ if .Site.Params.widgets.categories }}
+{{ if isset .Site.Taxonomies "category" }}
+{{ if ne (len .Site.Taxonomies.category) 0 }}
+<div class="mb-6">
+
+	<h3 class="is-size-4 is-family-secondary has-text-weight-semibold">{{ i18n "_Categories" }}</h3>
+
+    <div>
+		{{ range $name, $items := .Site.Taxonomies.category }}
+		<p class="mb-2">
+			<a class="is-uppercase has-text-dark"
+			href='{{ (printf "category/%s" $name) | urlize | lower | relLangURL }}'>{{ replace $name "-" " " | title }} ({{ len $items }})</a>
+		</p>
+		{{ end }}
+    </div>
+</div>
+{{ end }}
+{{ end }}
+{{ end }}

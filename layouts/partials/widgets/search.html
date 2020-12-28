@@ -1,0 +1,13 @@
+{{ if isset .Site.Params.widgets "search" }}
+{{ if .Site.Params.widgets.search }}
+<div class="mb-6 mt-1">
+	<h3 class="is-size-4 is-family-secondary has-text-weight-semibold">{{ i18n "_Search" }}</h3>
+
+	<input class="input is-fullwidth" id="search" type="text" placeholder='{{ i18n "_Search" }}'>
+	<div id="results" class="is-hidden">
+		<h3 class="is-size-4 is-family-secondary has-text-weight-semibold">{{ i18n "_Results" }}</h3>
+		<ul id="results-list"></ul>
+	</div>
+</div>
+{{ end }}
+{{ end }}

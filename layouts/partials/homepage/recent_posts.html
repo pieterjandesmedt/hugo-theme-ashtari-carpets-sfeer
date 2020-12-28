@@ -1,0 +1,27 @@
+{{ if isset .Site.Params "recent_posts" }}
+{{ if .Site.Params.recent_posts.enable }}
+
+{{ $featuredposts := (sort (where .Site.RegularPages "Section" "blog") "File.Path") }}
+
+{{ if (gt (len $featuredposts) 0) }}
+
+<section class="section my-6">
+	<div class="container is-widescreen">
+		{{ partial "micro/section-header" .Site.Params.recent_posts }}
+
+		{{/* divide the number of posts by 16 to get the number of repeats */}}
+		{{ $repeats := div (len $featuredposts) 16 }}
+
+		{{/* add 1 if we have some posts left over */}}
+		{{ $repeats := add $repeats (cond (ne (mod (len $featuredposts) 16) 0) 1 0) }}
+
+		{{/* make a sequence out of $repeats and range over it */}}
+		{{ range $i, $sequence :=  (seq $repeats) }}
+			{{ partial "homepage/layouts/16" (first 16 (after (mul $i 16) $featuredposts)) }}
+		{{ end }}
+
+	</div>
+</section>
+{{ end }}
+{{ end }}
+{{ end }}

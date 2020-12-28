@@ -1,0 +1,5 @@
+{{ $id := cond .IsNamedParams (.Get "id") (.Get 0) }}
+{{ $ratio := cond .IsNamedParams (.Get "ratio") (.Get 1) }}
+{{ $class := cond .IsNamedParams (.Get "class") (.Get 2) }}
+{{ $dict := (dict "id" $id "ratio" $ratio "class" $class ) }}
+{{ partial "micro/vimeo" $dict }}

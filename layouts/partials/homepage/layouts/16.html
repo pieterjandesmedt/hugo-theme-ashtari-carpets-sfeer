@@ -1,0 +1,9 @@
+{{ $part1 := first 2 . }}
+{{ $part2 := first 5 ( after 2 .) }}
+{{ $part3 := first 4 ( after 7 .) }}
+{{ $part4 := first 5 ( after 11 .) }}
+
+{{ partial "homepage/layouts/1+1" $part1 }}
+{{ partial "homepage/layouts/4+1" $part2 }}
+{{ partial "homepage/layouts/4" $part3 }}
+{{ partial "homepage/layouts/1+4" $part4 }}

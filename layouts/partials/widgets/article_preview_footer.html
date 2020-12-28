@@ -1,0 +1,14 @@
+{{- $title := .Title -}}
+<div class="columns is-mobile article-preview">
+	{{ $href := .RelPermalink }}
+	{{ with .Params.banner }}
+	<div class="column is-3">
+		<a href="{{ $href }}" title="{{ $title }}">
+			{{ partial "micro/image" (dict "filename" .) }}
+		</a>
+	</div>
+	{{ end }}
+	<div class="column">
+		<a href="{{ $href }}" class="has-text-white">{{ .Title }}</a>
+	</div>
+</div>

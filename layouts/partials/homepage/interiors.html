@@ -1,0 +1,61 @@
+{{ if isset .Site.Params "interiors" }}
+{{ if .Site.Params.interiors.enable }}
+<section>
+	<div class="container is-widescreen">
+
+		<div class="col c12">
+			{{ if ne .Site.Params.interiors.title "" }}
+			<div class="heading text-center">
+				<h2>{{ .Site.Params.interiors.title }}</h2>
+			</div>
+			{{ end }}
+
+			{{ if ne .Site.Params.interiors.subtitle "" }}
+			<p class="lead">
+				{{ .Site.Params.interiors.subtitle }}
+			</p>
+			{{ end }}
+
+			<div class="row">
+
+				{{ $posts :=  (where .Site.RegularPages "Section" "interiors") }}
+				{{ range $key, $post := first 3 $posts }}
+				{{ $featured := eq $key 0 }}
+				{{ if $featured }}<div class="col c8">
+				{{ else }}
+				{{ if eq $key 1 }}<div class="col c4">{{ end }}
+				<div class="col c12">
+					{{ end }}
+					<a href="{{ .Permalink }}">
+						<div class="box-image-text blog {{ if $featured }}featured{{ end }}">
+							<div class="top">
+								<div class="image" style="overflow:hidden">
+									{{ if isset .Params "banner" }}
+									<img src="/imagse/{{ .Params.banner }}" class="img-responsive" alt="" >
+									{{ else }}
+									<img src="/imagse/placeholder.png" class="img-responsive" alt="">
+									{{ end }}
+								</div>
+								<div class="text">
+									{{ if $featured }}<h5>{{ i18n "_Look Inside" }}</h5>{{ end }}
+									<h4>{{ .Title }}</h4>
+									{{ if eq $key 0 }}
+									<p class="intro">{{ .Description }}</p>
+									<span class="read-more btn btn-template-main">
+										{{ i18n "_Continue reading" }}
+									</span>
+									{{ end }}
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				{{ if eq $key 3 }}</div>{{ end }}
+				{{ end }}
+
+			</div>
+		</div>
+	</div>
+</section>
+{{ end }}
+{{ end }}

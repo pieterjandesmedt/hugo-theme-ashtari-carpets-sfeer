@@ -1,0 +1,7 @@
+{{ with . }}
+	{{ if gt (len .) 0 }}
+		{{ $sorted := sort . }}
+		{{ $links := apply $sorted "partial" "micro/to_translation_url" "." }}
+		{{ delimit $links "<span class='sep'>|</span>" }}
+	{{ end }}
+{{ end }}

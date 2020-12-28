@@ -1,0 +1,43 @@
+{{ if isset .Site.Params "designers" }}
+{{ if .Site.Params.designers.enable }}
+
+{{ $designers := first 6 (where .Site.RegularPages "Section" "designers") }}
+
+{{ if gt (len $designers) 0 }}
+
+<section class="section my-6">
+	<div class="container is-widescreen">
+		{{ partial "micro/section-header" .Site.Params.designers }}
+
+		<div class="tile is-ancestor is-vertical">
+			<div class="tile">
+				<div class="tile is-parent">
+					{{ with index $designers 0 }}{{ partial "widgets/article_preview_designer" . }}{{ end }}
+				</div>
+				<div class="tile is-parent">
+					{{ with index $designers 1 }}{{ partial "widgets/article_preview_designer" . }}{{ end }}
+				</div>
+			</div>
+			<div class="tile">
+				<div class="tile is-parent">
+					{{ with index $designers 2 }}{{ partial "widgets/article_preview_designer" . }}{{ end }}
+				</div>
+				<div class="tile is-parent">
+					{{ with index $designers 3 }}{{ partial "widgets/article_preview_designer" . }}{{ end }}
+				</div>
+			</div>
+			<div class="tile">
+				<div class="tile is-parent">
+					{{ with index $designers 4 }}{{ partial "widgets/article_preview_designer" . }}{{ end }}
+				</div>
+				<div class="tile is-parent">
+					{{ with index $designers 5 }}{{ partial "widgets/article_preview_designer" . }}{{ end }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /.bar -->
+{{ end }}
+{{ end }}
+{{ end }}

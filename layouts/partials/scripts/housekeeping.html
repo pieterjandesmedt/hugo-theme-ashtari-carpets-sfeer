@@ -1,0 +1,8 @@
+<script type="text/javascript">
+	localStorage.setItem('language', {{ .Site.Language.Lang }});
+
+	var username = '{{ index (split .Site.Params.email "@") 0  }}';
+	var hostname = '{{ index (split .Site.Params.email "@") 1  }}';
+	var linktext = username + "@" + hostname ;
+	document.getElementById('mmm').innerHTML = '<a class="has-text-white" href="' + 'mail' + 'to:' + username + '@' + hostname + '">' + linktext + '</a>';
+</script>

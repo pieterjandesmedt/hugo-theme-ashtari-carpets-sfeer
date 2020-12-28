@@ -1,0 +1,18 @@
+{{ if isset .Site.Params "vimeo" }}
+{{ if .Site.Params.vimeo.enable }}
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+	var iframe = document.getElementById('vimeo');
+	if (iframe) {
+		var player = new Vimeo.Player(iframe);
+
+		player.on('play', function () {
+			player.setLoop(true);
+			player.on('timeupdate', function (data) {
+				if (data.percent > 0.99) player.setVolume(0);
+			});
+		});
+	}
+</script>
+{{ end }}
+{{ end }}

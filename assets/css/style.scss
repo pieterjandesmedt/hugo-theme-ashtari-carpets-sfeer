@@ -1,0 +1,176 @@
+.video {
+	position: relative;
+	padding-bottom: 41.5%;
+	height: 0;
+	overflow: hidden;
+	width: 100%;
+	max-width: 100%;
+}
+.video iframe,
+.video object,
+.video embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.navbar-end {
+	.navbar-item {
+		border-top: 5px solid transparent;
+		&:hover,
+		&.is-active {
+			border-top: 5px solid #b09743;
+		}
+	}
+}
+
+.has-border-bottom {
+	border-bottom: solid 1px #333;
+}
+
+.article-preview, .single-page .content {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		line-height: 1;
+		font-family: "Crimson Text", serif;
+	}
+}
+
+.footer {
+	font-size: 14px;
+}
+
+.features {
+	.tile.is-parent {
+		border-right: 1px solid #ddd;
+		&:last-child {
+			border-right: none;
+		}
+	}
+}
+
+.design-stories {
+	h3 a,
+	p.is-uppercase span {
+		font-style: normal;
+		border-radius: 1em 0 1em 0;
+		text-shadow: 1px 1px 1px #fff;
+		background-image: linear-gradient(
+			-100deg,
+			rgba(255, 255, 150, 0.9),
+			rgb(255, 250, 150) 100%,
+			rgba(255, 250, 150, 0.5)
+		);
+	}
+}
+
+.tag {
+	margin-bottom: .2em;
+}
+
+.content figure {
+	margin: 0;
+	img {
+		width: 100%;
+	}
+}
+
+ul#results-list {
+	padding-left: 17px;
+	list-style-type: disc;
+}
+
+// TESTIMONIALS SLIDER
+
+.slider-container {
+	width: 100%;
+	position: relative;
+}
+
+.slider {
+	width: 100%;
+	height: 100%;
+}
+
+.slides {
+	height: 100%;
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+
+	&::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: black;
+		border-radius: 10px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	& > div {
+		scroll-snap-align: start;
+		flex-shrink: 0;
+		width: 100%;
+		height: 100%;
+		transform-origin: center center;
+		transform: scale(1);
+		transition: transform 0.5s;
+		position: relative;
+
+		display: flex;
+	}
+}
+
+// INSETS
+
+.about-ashtari {
+	background: url('/images/reza-wendy.jpg') center top no-repeat;
+}
+
+.craftsmanship {
+	background: url('/images/sheep.jpg') center top no-repeat;
+}
+
+.background-image-fixed {
+	background-attachment: fixed;
+	background-size: cover;
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+	h1,
+	h2,
+	i {
+		text-shadow: 0 0 1px rgba(0, 0, 0, 1), 0 0 2px rgba(0, 0, 0, 1);
+	}
+}
+
+@media (max-device-width: 1024px) {
+	.background-image-fixed {
+		background-attachment: scroll;
+	}
+}
+
+// OPENING HOURS TABLE
+
+.today {
+	color: #b09743;
+}
+
+.open {
+	color: #BCDD45;
+}
+
+.closed {
+	color: #AF0000;
+}

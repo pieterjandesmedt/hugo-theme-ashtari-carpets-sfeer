@@ -1,0 +1,7 @@
+{{ range . }}
+<div class="columns">
+	<div class="column">
+		{{ partial "micro/image_with_link" (dict "filename" .) }}
+	</div>
+</div>
+{{ end }}

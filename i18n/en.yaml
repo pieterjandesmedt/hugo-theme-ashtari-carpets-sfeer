@@ -1,0 +1,128 @@
+- id: "_Contact Form"
+  translation: "Contact Form"
+
+- id: "_Your Name"
+  translation: "Name"
+
+- id: "_Your Email"
+  translation: "Email Address"
+
+- id: "_Your Message"
+  translation: "Message"
+
+- id: "_Send message"
+  translation: "Send message"
+
+- id: "_Address"
+  translation: "Address"
+
+- id: "_About us"
+  translation: "About us"
+
+- id: "_Recent posts"
+  translation: "Recent posts"
+
+- id: "_Contact"
+  translation: "Contact"
+
+- id: "_Follow us"
+  translation: "Join us"
+
+- id: "_Translations"
+  translation: "Translations"
+
+- id: "_Search"
+  translation: "Search"
+
+- id: "_Results"
+  translation: "Results"
+
+- id: "_Categories"
+  translation: "Categories"
+
+- id: readingTime
+  translation:
+    one: "One minute read"
+    other: "{{.Count}} minutes read"
+
+- id: "_Look Inside"
+  translation: "Look Inside"
+
+- id: "_Read more"
+  translation: "Read more"
+
+- id: "_Continue reading"
+  translation: "Continue reading"
+
+- id: "_Read more on:"
+  translation: "Read more on:"
+
+- id: "_See more"
+  translation: "See more"
+
+- id: "_Newer"
+  translation: "Newer"
+
+- id: "_Older"
+  translation: "Older"
+
+- id: "_Tags"
+  translation: "Tags"
+
+- id: "_Share this article"
+  translation: "Share this article"
+
+- id: "_Comments"
+  translation: "Comments"
+
+- id: "_Opening hours"
+  translation: "Opening hours"
+
+- id: "_Monday"
+  translation: "Monday"
+
+- id: "_Tuesday"
+  translation: "Tuesday"
+
+- id: "_Wednesday"
+  translation: "Wednesday"
+
+- id: "_Thursday"
+  translation: "Thursday"
+
+- id: "_Friday"
+  translation: "Friday"
+
+- id: "_Saturday"
+  translation: "Saturday"
+
+- id: "_Sunday"
+  translation: "Sunday"
+
+- id: "_We are open"
+  translation: "We are now open"
+
+- id: "_We are closed"
+  translation: "We are now closed"
+
+- id: "_closed"
+  translation: "closed"
+
+- id: "_Reviews"
+  translation: "Reviews"
+
+- id: "_Go to contact page"
+  translation: "Go to contact page"
+
+- id: "_Error 404 - Page not found"
+  translation: "Error 404 - Page not found"
+
+- id: "_We are sorry - this page is not here anymore."
+  translation: "We are sorry - this page is not here anymore."
+
+- id: "_Newsletter"
+  translation: "Newsletter"
+
+- id: "_More on instagram"
+  translation: "More on instagram"
+

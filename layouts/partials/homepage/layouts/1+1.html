@@ -1,0 +1,20 @@
+{{ if (gt (len .) 0) }}
+<div class="tile is-ancestor">
+	<div class="tile">
+		{{ with index . 0 }}
+		<div class="tile is-8 is-parent">
+			<article class="tile is-child">
+				{{ partial "widgets/article_preview_image-overlay" . }}
+			</article>
+		</div>
+		{{ end }}
+		{{ with index . 1 }}
+		<div class="tile is-parent">
+			<article class="tile is-child">
+				{{ partial "widgets/article_preview_image" . }}
+			</article>
+		</div>
+		{{ end }}
+	</div>
+</div>
+{{ end }}

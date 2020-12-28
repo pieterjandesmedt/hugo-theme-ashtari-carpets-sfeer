@@ -1,0 +1,20 @@
+{{ if isset .Site.Params "about_ashtari" }}
+{{ if .Site.Params.about_ashtari.enable }}
+<section class="section my-6 hero background-image-fixed about-ashtari is-medium ">
+	<div class="hero-body">
+		<div class="container is-widescreen">
+			<h1 class="title is-family-secondary is-size-2">
+				<a href="{{ .Site.Params.about_ashtari.link_url | relLangURL }}" class="has-text-white">
+					{{ .Site.Params.about_ashtari.title | safeHTML }}
+				</a>
+			</h1>
+			<h2 class="subtitle is-size-3">
+				<a href="{{ .Site.Params.about_ashtari.link_url | relLangURL }}" class="has-text-white">
+					{{ .Site.Params.about_ashtari.subtitle | safeHTML }}
+				</a>
+			</h2>
+		</div>
+	</div>
+</section>
+{{ end }}
+{{ end }}

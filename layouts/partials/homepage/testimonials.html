@@ -1,0 +1,28 @@
+{{ if isset .Site.Params "testimonials" }}
+{{ if .Site.Params.testimonials.enable }}
+
+{{ $testimonials := (where .Site.RegularPages "Section" "testimonials") }}
+{{ if gt (len $testimonials) 0 }}
+
+<section class="section my-6">
+	<div class="container is-widescreen">
+		{{ partial "micro/section-header" .Site.Params.testimonials }}
+
+		<div class="slider-container mb-6">
+			<div class="slider">
+				<div class="slides columns">
+					{{ range $index, $testimonial := $testimonials }}
+					<div class="slide column is-3-widescreen is-4-desktop is-6-tablet is-12-mobile" id="slide-{{ $index }}">
+						{{ partial "widgets/article_preview_testimonial" $testimonial }}
+					</div>
+					{{ end }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+{{ end }}
+{{ end }}
+{{ end }}

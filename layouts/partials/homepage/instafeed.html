@@ -1,0 +1,17 @@
+{{ if isset .Site.Params.social "instagram" }}
+<section class="section my-6">
+	<div class="container is-widescreen">
+		{{ partial "micro/section-header" .Site.Params.instagram }}
+
+		<div id="instafeed" class="columns is-mobile is-multiline"></div>
+
+		<div class="has-text-centered">
+			<a href="{{ .Site.Params.social.instagram }}" target=_blank
+				class="button is-dark is-outlined is-uppercase mt-3">
+				<i class="icon fa fa-instagram"></i>
+				<span>{{ i18n "_More on instagram" }}</span>
+			</a>
+		</div>
+	</div>
+</section>
+{{ end }}

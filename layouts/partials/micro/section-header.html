@@ -1,0 +1,9 @@
+{{- $url := .url -}}
+<div class="level has-border-bottom">
+	{{- with .title -}}
+	<h1 class="level-left is-size-3 is-family-secondary is-lowercase has-text-weight-semibold"># {{ . }}</h1>
+	{{- end -}}
+	{{- with .subtitle -}}
+	<a class="level-right is-uppercase is-size-7 has-text-grey" href="{{ $url | relLangURL }}">{{ . }}</a>
+	{{- end -}}
+</div>

@@ -1,0 +1,124 @@
+<footer class="footer mt-6">
+	<div class="container is-widescreen">
+		<div class="columns is-multiline">
+			<div class="column is-3-desktop is-6-tablet">
+
+				{{ if isset .Site.Params "opening_hours" }}
+				<div id="footer--opening-hours">
+					{{ partial "widgets/opening_hours" . }}
+					<hr class="is-hidden-tablet">
+				</div>
+				{{ end }}
+
+				{{ if isset .Site.Params "social" }}
+				<div id="footer--social">
+					<h3 class="is-family-secondary is-size-5 mb-3 mt-6">{{ i18n "_Follow us" }}</h3>
+					<div class="social is-size-2">
+						{{ if isset .Site.Params.social "facebook" }} <a class="has-text-white mr-4"
+							href="{{ .Site.Params.social.facebook }}" target=_blank title="facebook"><i class="icon icon-facebook"></i></a>
+						{{ end }}
+						{{ if isset .Site.Params.social "instagram" }} <a class="has-text-white mr-4"
+							href="{{ .Site.Params.social.instagram }}" target=_blank title="instagram"><i class="icon icon-instagram"></i></a>
+						{{ end }}
+						{{ if isset .Site.Params.social "twitter" }} <a class="has-text-white mr-4"
+							href="{{ .Site.Params.social.twitter }}" target=_blank title="twitter"><i class="icon icon-twitter"></i></a>
+						{{ end }}
+						{{ if isset .Site.Params.social "linkedin" }} <a class="has-text-white mr-4"
+							href="{{ .Site.Params.social.linkedin }}" target=_blank title="linkedin"><i class="icon icon-linkedin"></i></a>
+						{{ end }}
+						{{ if isset .Site.Params.social "pinterest" }} <a class="has-text-white mr-4"
+							href="{{ .Site.Params.social.pinterest }}" target=_blank title="pinterest"><i class="icon icon-pinterest"></i></a>
+						{{ end }}
+						{{ if isset .Site.Params.social "vimeo" }} <a class="has-text-white mr-4"
+							href="{{ .Site.Params.social.vimeo }}" target=_blank title="vimeo"><i class="icon icon-vimeo"></i></a>
+						{{ end }}
+					</div>
+					<hr class="is-hidden-tablet">
+				</div>
+				{{ end }}
+
+				{{ if isset .Site.Params "newsletter" }}
+				<div id="footer--newsletter">
+					<h3 class="is-family-secondary is-size-5 mb-3 mt-6">{{ i18n "_Newsletter" }}</h3>
+					<!-- Begin MailChimp Signup Form -->
+					<div id="mc_embed_signup">
+						<form
+							action="//ashtaricarpets.us10.list-manage.com/subscribe/post?u=b679e2acdbd2f96dc4acee20f&amp;id=85398d0264"
+							method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+							class="validate" target="_blank" novalidate>
+							<div id="mc_embed_signup_scroll">
+								<div class="mc-field-group field">
+									<label for="mce-EMAIL">{{ i18n "_Your Email" }}</label>
+									<div class="control has-icons-left">
+										<input class="input" type="email" value="" name="EMAIL" class="required email"
+											id="mce-EMAIL" placeholder='{{ i18n "_Your Email" }}'>
+										<span class="icon is-small is-left">
+											<i class="icon icon-bullhorn"></i>
+										</span>
+									</div>
+									<div style="position: absolute; left: -5000px;" aria-hidden="true"><input
+											type="text" name="b_b679e2acdbd2f96dc4acee20f_85398d0264" tabindex="-1"
+											value=""></div>
+									<input type="submit" value="Inschrijven" name="subscribe" id="mc-embedded-subscribe"
+										class="button mt-1 is-fullwidth is-uppercase">
+								</div>
+								<div id="mce-responses" class="clear">
+									<div class="response" id="mce-error-response" style="display:none"></div>
+									<div class="response" id="mce-success-response" style="display:none"></div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!--End mc_embed_signup-->
+				</div>
+				{{ end }}
+			</div>
+
+			<div class="column is-3-desktop is-6-tablet">
+				<div id="footer--recent">
+					<h3 class="is-family-secondary is-size-5 mb-3">{{ i18n "_Recent posts" }}</h3>
+					<div class="blog-entries">
+						{{ range first 5 (where .Site.RegularPages "Section" "blog") }}
+						{{ partial "widgets/article_preview_footer" . }}
+						{{ end }}
+					</div>
+					<hr class="is-hidden-tablet">
+				</div>
+			</div>
+
+			<div class="column is-3-desktop is-6-tablet">
+				<div id="footer--contact">
+					{{ if isset .Site.Params "address" }}
+					<h3 class="is-family-secondary is-size-5 mb-3">{{ i18n "_Contact" }}</h3>
+					{{ .Site.Params.address | safeHTML }}
+					<a href="{{ "/contact" | relLangURL }}"
+						class="button is-small is-white mt-3 is-uppercase">{{ i18n "_Go to contact page" }}</a>
+					<hr class="is-hidden-tablet">
+					{{ end }}
+				</div>
+			</div>
+
+			<div class="column is-3-desktop is-6-tablet">
+				<h3 class="is-family-secondary is-size-5 mb-3">{{ i18n "_Reviews" }}</h3>
+				<iframe title="{{ i18n "_Reviews" }}" id="kiyoh" frameborder="0" allowtransparency="true" scrolling="no"
+					src="https://www.kiyoh.com/retrieve-widget.html?color=dark&allowTransparency=true&button=false&lang=nl&tenantId=98&locationId=1042359"
+					width="100%" height="300"></iframe>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<section id="copyright" class="section py-6 has-text-light has-background-dark">
+	<div class="container is-widescreen">
+		<div class="columns">
+			<div class="column">
+				Website by <a href="https://www.digitalcomet.be" target="_blank">Digital Comet</a>
+			</div>
+			<div class="column has-text-right">
+				{{ if isset .Site.Params "copyright" }}
+				<p>&copy; 2015 - {{ now.Format "2006" }} {{ .Site.Params.copyright | safeHTML }}</p>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+</section>

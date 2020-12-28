@@ -1,0 +1,47 @@
+{{ if (gt (len .) 0) }}
+<div class="tile is-ancestor">
+	<div class="tile">
+		{{ with index . 0 }}
+		<div class="tile is-parent">
+			<article class="tile is-child">
+				{{ partial "widgets/article_preview_summary" . }}
+			</article>
+		</div>
+		{{ end }}
+		<div class="tile is-6 is-vertical">
+			<div class="tile">
+				{{ with index . 1 }}
+				<div class="tile is-parent">
+					<article class="tile is-child">
+						{{ partial "widgets/article_preview_title" . }}
+					</article>
+				</div>
+				{{ end }}
+				{{ with index . 2 }}
+				<div class="tile is-parent">
+					<article class="tile is-child">
+						{{ partial "widgets/article_preview_title" . }}
+					</article>
+				</div>
+				{{ end }}
+			</div>
+			<div class="tile">
+				{{ with index . 3 }}
+				<div class="tile is-parent">
+					<article class="tile is-child">
+						{{ partial "widgets/article_preview_title" . }}
+					</article>
+				</div>
+				{{ end }}
+				{{ with index . 4 }}
+				<div class="tile is-parent">
+					<article class="tile is-child">
+						{{ partial "widgets/article_preview_title" . }}
+					</article>
+				</div>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+</div>
+{{ end }}

@@ -1,0 +1,31 @@
+<div class="container is-widescreen" id="contact">
+	<div class="row">
+		<div class="col c8">
+			{{ .Content }}
+			{{ if isset .Site.Params "email" }}
+
+			{{ partial "widgets/contact" . }}
+
+			{{ end }}
+		</div>
+
+		<div class="col space1 c3">
+			{{ if isset .Site.Params "address" }}
+			<div class="panel panel-default sidebar-menu">
+
+				<div class="panel-heading">
+					<h3 class="panel-title">{{ i18n "_Address" }}</h3>
+				</div>
+
+				<div class="panel-body">
+					{{ .Site.Params.address | safeHTML }}
+				</div>
+			</div>
+			{{ end }}
+
+			{{ partial "widgets/opening_hours.html" . }}
+		</div>
+	</div>
+	<!-- /.row -->
+</div>
+

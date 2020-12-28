@@ -1,0 +1,14 @@
+{{ if isset .Site.Params "instafeed" }}
+{{ if .Site.Params.instafeed.enable }}
+<script type="text/javascript" src="../js/instafeed.min.js"></script>
+<script type="text/javascript" src="https://ig.instant-tokens.com/users/cff67e2f-3a72-40d6-92d5-8770b378ef2d/instagram/17841402157998056/token.js?userSecret=8y6zus2vwyodo36k6wll"></script>
+<script type="text/javascript">
+	var feed = new Instafeed({
+		accessToken: InstagramToken,
+		limit: 12,
+		template: '<span class="column is-3-desktop is-4-tablet is-6-mobile"><a href="\{\{link\}\}"><img title="\{\{caption\}\}" src="\{\{image\}\}" /></a></a></span>'
+	});
+	feed.run();
+</script>
+{{ end }}
+{{ end }}

@@ -1,0 +1,22 @@
+{{ if isset .Site.Params "services" }}
+{{ if .Site.Params.services.enable }}
+
+{{ $services := first 10 (where .Site.RegularPages "Section" "services") }}
+{{ if gt (len $services) 0 }}
+
+<section class="section my-6">
+	<div class="container is-widescreen">
+		{{ partial "micro/section-header" .Site.Params.services }}
+
+		{{ range $services }}
+		{{ partial "widgets/article_preview_service" . }}
+		{{ end }}
+
+	</div>
+
+</section>
+<!-- /.bar -->
+
+{{ end }}
+{{ end }}
+{{ end }}

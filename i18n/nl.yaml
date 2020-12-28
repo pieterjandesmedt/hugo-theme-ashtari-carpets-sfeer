@@ -1,0 +1,127 @@
+- id: "_Your Name"
+  translation: "Naam"
+
+- id: "_Your Email"
+  translation: "Emailadres"
+
+- id: "_Your Message"
+  translation: "Bericht"
+
+- id: "_Send message"
+  translation: "Verstuur"
+
+- id: "_Address"
+  translation: "Adres"
+
+- id: "_About us"
+  translation: "Over ons"
+
+- id: "_Recent posts"
+  translation: "Recent nieuws"
+
+- id: "_Contact Form"
+  translation: "Contacteer ons"
+
+- id: "_Contact"
+  translation: "Contact"
+
+- id: "_Follow us"
+  translation: "Volg ons"
+
+- id: "_Translations"
+  translation: "In een andere taal"
+
+- id: "_Search"
+  translation: "Zoeken"
+
+- id: "_Results"
+  translation: "Resultaten"
+
+- id: "_Categories"
+  translation: "Categorieën"
+
+- id: readingTime
+  translation:
+    one: "Eén minuut leestijd"
+    other: "{{.Count}} minuten leestijd"
+
+- id: "_Look Inside"
+  translation: "Binnenkijkers interieur"
+
+- id: "_Read more"
+  translation: "Lees meer"
+
+- id: "_Continue reading"
+  translation: "Lees verder"
+
+- id: "_Read more on:"
+  translation: "Lees hier verder:"
+
+- id: "_See more"
+  translation: "Bekijk meer..."
+
+- id: "_Newer"
+  translation: "Nieuwer"
+
+- id: "_Older"
+  translation: "Ouder"
+
+- id: "_Tags"
+  translation: "Tags"
+
+- id: "_Share this article"
+  translation: "Deel dit artikel"
+
+- id: "_Comments"
+  translation: "Commentaar"
+
+- id: "_Opening hours"
+  translation: "Openingsuren"
+
+- id: "_Monday"
+  translation: "Maandag"
+
+- id: "_Tuesday"
+  translation: "Dinsdag"
+
+- id: "_Wednesday"
+  translation: "Woensdag"
+
+- id: "_Thursday"
+  translation: "Donderdag"
+
+- id: "_Friday"
+  translation: "Vrijdag"
+
+- id: "_Saturday"
+  translation: "Zaterdag"
+
+- id: "_Sunday"
+  translation: "Zondag"
+
+- id: "_We are open"
+  translation: "We zijn nu open"
+
+- id: "_We are closed"
+  translation: "We zijn nu gesloten"
+
+- id: "_closed"
+  translation: "gesloten"
+
+- id: "_Reviews"
+  translation: "Beoordelingen"
+
+- id: "_Go to contact page"
+  translation: "Ga naar contactpagina"
+
+- id: "_Error 404 - Page not found"
+  translation: "Error 404 - Pagina niet gevonden"
+
+- id: "_We are sorry - this page is not here anymore."
+  translation: "Sorry - die pagina bestaat niet meer."
+
+- id: "_Newsletter"
+  translation: "Nieuwsbrief"
+
+- id: "_More on instagram"
+  translation: "Meer op instagram"

@@ -1,0 +1,31 @@
+{{ if isset .Site.Params "brands" }}
+{{ if .Site.Params.brands.enable }}
+{{ if gt (len .Site.Data.brands) 0 }}
+
+<section class="bar background-gray">
+	<div class="container is-widescreen">
+		{{ partial "micro/section-header" .Site.Params.brands }}
+
+		<div class="row">
+			<ul class="owl-carousel brands same-height-row">
+				{{ range .Site.Data.brands }}
+				<li class="item" title="{{ .name }}">
+					<div class="brand same-height-always">
+						{{ if .url }}
+						<a href="{{ .url }}" target="_blank">
+							<img src="/images/{{ .image }}" alt="{{ .name }}" />
+						</a>
+						{{ else }}
+						<img src="/images/{{ .image }}" alt="{{ .name }}" />
+						{{ end }}
+					</div>
+				</li>
+				{{ end }}
+			</ul>
+			<!-- /.owl-carousel -->
+		</div>
+	</div>
+</section>
+{{ end }}
+{{ end }}
+{{ end }}

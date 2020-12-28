@@ -1,0 +1,21 @@
+name: Ashtari Carpets Sfeer
+license: proprietary
+description: Ashtari Carpets mimimal responsive theme
+homepage: //github.com/pieterjandesmedt/hugo-theme-ashtari-carpets-sfeer
+tags:
+- blog
+- company
+- portfolio
+- projects
+- minimal
+- responsive
+features:
+- blog
+- themes
+- disqus
+- minimal
+- responsive
+
+author:
+- name: Pieter Jan De Smedt
+- homepage: //github.com/pieterjandesmedt

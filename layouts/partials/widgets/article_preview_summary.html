@@ -1,0 +1,22 @@
+{{- $title := .Title -}}
+<div class="article-preview {{ with .Params.category }}{{ urlize . }}{{ end }}">
+	{{ $href := .RelPermalink }}
+	{{ with .Params.banner }}
+	<div>
+		<a href="{{ $href }}" title="{{ $title }}">
+			{{ partial "micro/image" (dict "filename" .) }}
+		</a>
+	</div>
+	{{ end }}
+	<div>
+		{{ with .Params.category }}<p class="is-uppercase is-size-7 mb-3"><span>{{ . }}</span></p>{{ end }}
+		<h2 class="is-size-4 is-family-secondary has-text-weight-semibold">
+			<a href="{{ $href }}" class="has-text-dark">{{ .Title }}</a>
+		</h2>
+		<h3 class="is-size-5 has-text-grey mb-3">{{ .Description }}</h3>
+		<div class="content">{{ .Summary }}</div>
+		<a href="{{ $href }}" class="button is-dark is-outlined is-uppercase mt-3">
+			{{ i18n "_Continue reading" }}
+		</a>
+	</div>
+</div>

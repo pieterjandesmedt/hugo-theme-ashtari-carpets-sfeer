@@ -1,0 +1,12 @@
+{{ if .Site.Params.widgets.tags }}
+{{ if isset .Site.Taxonomies "tags" }}
+{{ if not (eq (len .Site.Taxonomies.tags) 0) }}
+<div class="my-6">
+	<h3 class="is-size-4 is-family-secondary has-text-weight-semibold">Tags</h3>
+	{{ range .Site.Taxonomies.tags.Alphabetical }}
+	{{ partial "micro/tag" .Page }}
+	{{ end }}
+</div>
+{{ end }}
+{{ end }}
+{{ end }}
