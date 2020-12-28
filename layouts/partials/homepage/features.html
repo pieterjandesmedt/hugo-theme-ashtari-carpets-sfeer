@@ -1,18 +1,14 @@
 {{ if isset .Site.Params "features" }}
 {{ if .Site.Params.features.enable }}
-{{ if gt (len .Site.Data.features) 0 }}
-{{ $locale := .Site.Language.Lang }}
+{{ if gt (len (where .Site.RegularPages "Section" "about")) 0 }}
 <section class="section my-6 features">
 	<div class="container is-widescreen">
 		<div class="tile is-ancestor">
-			{{ range sort .Site.Data.features "weight" }}
+			{{ range (where .Site.RegularPages "Section" "about") }}
 			<div class="tile is-parent has-text-centered">
 				<div class="box">
-					{{ with .icon }}
-					<div class="icon"><i class="{{ . }}"></i></div>
-					{{ end }}
-					<h3 class="mb-3 is-size-4 is-family-secondary has-text-centered">{{ index .name $locale }}</h3>
-					<div class="content has-text-justified">{{ index .description $locale | safeHTML }}</div>
+					<h3 class="mb-3 is-size-4 is-family-secondary has-text-centered">{{ .Title }}</h3>
+					<div class="content has-text-justified">{{ .Content }}</div>
 				</div>
 			</div>
 			{{ end }}
