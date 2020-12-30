@@ -1,5 +1,5 @@
 ---
-title: {{ replace .Name "-" " " | replaceRE "^[0-9]*" "" | replace "_" " " | trim | title }}
+title: {{ replace .Name "-" " " | replaceRE "^[0-9]*" "" | replace "_" " " | trim " " | title }}
 date: {{ .Date }}
 author: Wendy Guns
 category: design stories
