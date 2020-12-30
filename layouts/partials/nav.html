@@ -15,7 +15,8 @@
 			<div id="navbar" class="navbar-menu">
 				<div class="navbar-end">
 					{{ range .Site.Params.Menus }}
-					<a href="{{ .url | relLangURL }}" {{ if .newpage }}target=_blank {{end}}
+					{{ $url := cond (eq (substr .url 0 4) "http") .url (relLangURL (.url)) }}
+					<a href="{{ $url }}" {{ if .newpage }}target=_blank {{end}}
 						class="navbar-item is-align-items-end">
 						{{ with .icon }}<i class="icon {{ . }}"></i>{{ end }}
 						<span class="is-size-6 has-text-grey is-uppercase">{{ .name }}</span>
