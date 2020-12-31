@@ -174,3 +174,11 @@ ul#results-list {
 .closed {
 	color: #AF0000;
 }
+
+// PRINT
+
+@media print {
+	#navbar, #sidebar, #separator, footer, #article-tags, #social, #comments {
+		display: none;
+	}
+}
