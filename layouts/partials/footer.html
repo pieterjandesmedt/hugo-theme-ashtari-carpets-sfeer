@@ -1,7 +1,7 @@
 <footer class="footer mt-6">
 	<div class="container is-widescreen">
-		<div class="columns is-multiline">
-			<div class="column is-3-desktop is-6-tablet">
+		<div class="columns is-multiline is-print">
+			<div class="column is-3-desktop is-6-tablet is-4-print">
 
 				{{ if isset .Site.Params "opening_hours" }}
 				<div id="footer--opening-hours">
@@ -11,7 +11,7 @@
 				{{ end }}
 
 				{{ if isset .Site.Params "social" }}
-				<div id="footer--social">
+				<div id="footer--social" class="is-hidden-print">
 					<h3 class="is-family-secondary is-size-5 mb-3 mt-6">{{ i18n "_Follow us" }}</h3>
 					<div class="social is-size-2">
 						{{ if isset .Site.Params.social "facebook" }} <a class="has-text-white mr-4"
@@ -38,7 +38,7 @@
 				{{ end }}
 
 				{{ if isset .Site.Params "newsletter" }}
-				<div id="footer--newsletter">
+				<div id="footer--newsletter" class="is-hidden-print">
 					<h3 class="is-family-secondary is-size-5 mb-3 mt-6">{{ i18n "_Newsletter" }}</h3>
 					<!-- Begin MailChimp Signup Form -->
 					<div id="mc_embed_signup">
@@ -74,7 +74,7 @@
 				{{ end }}
 			</div>
 
-			<div class="column is-3-desktop is-6-tablet">
+			<div class="column is-3-desktop is-6-tablet is-hidden-print">
 				<div id="footer--recent">
 					<h3 class="is-family-secondary is-size-5 mb-3">{{ i18n "_Recent posts" }}</h3>
 					<div class="blog-entries">
@@ -86,19 +86,19 @@
 				</div>
 			</div>
 
-			<div class="column is-3-desktop is-6-tablet">
+			<div class="column is-3-desktop is-6-tablet is-4-print is-offset-4-print">
 				<div id="footer--contact">
 					{{ if isset .Site.Params "address" }}
 					<h3 class="is-family-secondary is-size-5 mb-3">{{ i18n "_Contact" }}</h3>
 					{{ .Site.Params.address | safeHTML }}
 					<a href="{{ "/contact" | relLangURL }}"
-						class="button is-small is-white mt-3 is-uppercase">{{ i18n "_Go to contact page" }}</a>
+						class="button is-small is-white mt-3 is-uppercase is-hidden-print">{{ i18n "_Go to contact page" }}</a>
 					<hr class="is-hidden-tablet">
 					{{ end }}
 				</div>
 			</div>
 
-			<div class="column is-3-desktop is-6-tablet">
+			<div class="column is-3-desktop is-6-tablet is-hidden-print">
 				<h3 class="is-family-secondary is-size-5 mb-3">{{ i18n "_Reviews" }}</h3>
 				<iframe title="{{ i18n "_Reviews" }}" id="kiyoh" frameborder="0" allowtransparency="true" scrolling="no"
 					src="https://www.kiyoh.com/retrieve-widget.html?color=dark&allowTransparency=true&button=false&lang=nl&tenantId=98&locationId=1042359"

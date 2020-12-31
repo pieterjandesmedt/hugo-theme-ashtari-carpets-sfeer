@@ -28,19 +28,6 @@
   .is-hidden-print
     display: none !important
 
-  /* i added or modified these print link URLs */
-  a:not(.is-not-linked-print)[href]::after
-    content: attr(href)
-    text-decoration: underline
-    font-size: 90%
-    padding-left: 0.5rem
-
-  a[href].clearfix::after
-    content: attr(href)
-    text-decoration: underline
-    font-size: 90%
-    padding-top: 0.5rem
-
   /* and i did this drastic war on color */
   *
     background-color: white !important
@@ -62,6 +49,10 @@
 
   .column.is-narrow ~ .column
     display: inline-block
+
+  .columns
+    &.is-print
+      display: flex !important
 
 .column
   +print

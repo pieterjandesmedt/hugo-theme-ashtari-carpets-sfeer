@@ -1,6 +1,6 @@
 {{ if isset .Site.Params "craftsmanship" }}
 {{ if .Site.Params.craftsmanship.enable }}
-<section class="section my-6 hero background-image-fixed craftsmanship is-medium">
+<section class="section my-6 hero background-image-fixed craftsmanship is-medium is-hidden-print">
 	<div class="hero-body">
 		<div class="container has-text-centered">
 			<a href="{{ .Site.Params.craftsmanship.link_url | relLangURL }}" class="has-text-white is-size-1" title="{{ .Site.Params.craftsmanship.title | safeHTML }}">

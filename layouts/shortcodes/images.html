@@ -1,7 +1,7 @@
 <!-- image -->
 {{ $postname := index (first 1 (last 2 (split .Page.RelPermalink "/"))) 0 }}
 {{ $catname := index (last 1 (first 3 (split .Page.RelPermalink "/"))) 0 }}
-<div class="columns">
+<div class="columns is-print">
 	{{ if .IsNamedParams }}
 		<!-- named, check for src -->
 		{{ if .Get "src" }}

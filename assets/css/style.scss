@@ -174,3 +174,24 @@ ul#results-list {
 .closed {
 	color: #AF0000;
 }
+
+
+// PRINT
+
+@media print {
+	.navbar-brand {
+		.navbar-item {
+			display: block;
+			margin: 0 auto;
+			img {
+				height: 2cm;
+			}
+		}
+	}
+
+	footer.footer {
+		.has-text-white {
+			color: black !important;
+		}
+	}
+}

@@ -71,6 +71,6 @@
 	{{- $print := resources.Get "css/src_global__print.sass" | toCSS -}}
 	{{- $custom := resources.Get "css/style.scss" | toCSS -}}
 	{{- $icons := resources.Get "css/styles.css" -}}
-	{{- $style := slice $bulma $custom $icons | resources.Concat "css/style.css" | minify | fingerprint -}}
+	{{- $style := slice $bulma $print $custom $icons | resources.Concat "css/style.css" | minify | fingerprint -}}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 </head>

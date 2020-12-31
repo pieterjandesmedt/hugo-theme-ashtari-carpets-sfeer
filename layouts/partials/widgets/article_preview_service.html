@@ -1,5 +1,5 @@
 {{- $title := .Title -}}
-<div class="columns article-preview {{ with .Params.category }}{{ urlize . }}{{ end }}">
+<div class="columns article-preview is-print {{ with .Params.category }}{{ urlize . }}{{ end }}">
 	{{ $href := .RelPermalink }}
 	{{ with .Params.banner }}
 	<div class="column is-3">

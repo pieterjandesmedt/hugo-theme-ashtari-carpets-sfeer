@@ -10,7 +10,7 @@
 
 		<div class="slider-container mb-6">
 			<div class="slider">
-				<div class="slides columns">
+				<div class="slides columns is-print">
 					{{ range $index, $testimonial := $testimonials }}
 					<div class="slide column is-3-widescreen is-4-desktop is-6-tablet is-12-mobile" id="slide-{{ $index }}">
 						{{ partial "widgets/article_preview_testimonial" $testimonial }}
