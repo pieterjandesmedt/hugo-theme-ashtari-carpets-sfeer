@@ -13,7 +13,7 @@
 			<div class="columns">
 
 				<!-- *** LEFT COLUMN *** -->
-				<div class="column is-8">
+				<div class="column is-8 is-full-print">
 
 					<h1 class="is-family-secondary is-size-3 has-text-weight-semibold">{{ .Title }}</h1>
 
@@ -45,7 +45,7 @@
 
 					</div>
 
-					<div class="columns mb-6">
+					<div class="columns mb-6 is-hidden-print">
 						{{ if .Params.tags }}
 						<div id="article-tags" class="column">
 							<h3 class="is-family-secondary is-size-4 mb-3 has-text-weight-semibold">
@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					{{ if .Site.DisqusShortname }}
-					<div id="comments">
+					<div id="comments" class="is-hidden-print">
 						<h3 class="is-family-secondary is-size-4 mb-3 has-text-weight-semibold">{{ i18n "_Comments" }}
 						</h3>
 						{{ template "_internal/disqus.html" . }}
@@ -74,9 +74,9 @@
 					{{ end }}
 				</div>
 
-				<div class="column is-1" id="separator"></div>
+				<div class="column is-1 is-hidden-print"></div>
 
-				<div class="column">
+				<div class="column is-hidden-print">
 					{{ partial "sidebar.html" . }}
 				</div>
 

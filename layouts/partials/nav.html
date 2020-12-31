@@ -12,7 +12,7 @@
 				</div>
 			</div>
 
-			<div id="navbar" class="navbar-menu">
+			<div id="navbar" class="navbar-menu is-hidden-print">
 				<div class="navbar-end">
 					{{ range .Site.Params.Menus }}
 					{{ $url := cond (eq (substr .url 0 4) "http") .url (relLangURL (.url)) }}

@@ -68,6 +68,7 @@
 	<meta name="format-detection" content="telephone=yes">
 	{{/* for resources.Get to work, resources should be in the /assets subdirectory of your theme */}}
 	{{- $bulma := resources.Get "css/bulma.sass" | toCSS -}}
+	{{- $print := resources.Get "css/src_global__print.sass" | toCSS -}}
 	{{- $custom := resources.Get "css/style.scss" | toCSS -}}
 	{{- $icons := resources.Get "css/styles.css" -}}
 	{{- $style := slice $bulma $custom $icons | resources.Concat "css/style.css" | minify | fingerprint -}}
