@@ -2,4 +2,8 @@
 {{ $ratio := cond .IsNamedParams (.Get "ratio") (.Get 1) }}
 {{ $class := cond .IsNamedParams (.Get "class") (.Get 2) }}
 {{ $dict := (dict "id" $id "ratio" $ratio "class" $class ) }}
-{{ partial "micro/vimeo" $dict }}
+<div class="columns">
+	<div class="column">
+		{{ partial "micro/vimeo" $dict }}
+	</div>
+</div>
