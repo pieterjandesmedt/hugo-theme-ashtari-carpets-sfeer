@@ -8,6 +8,13 @@
 		</a>
 	</div>
 	{{ end }}
+	{{ with .Params.videobanner }}
+	{{ $id := index (split . " ") 0 }}
+	{{ $ratio := index (split . " ") 1 }}
+	<div>
+		{{ partial "micro/vimeo" (dict "id" $id "ratio" $ratio) }}
+	</div>
+	{{ end }}
 	<div>
 		{{ with .Params.category }}<p class="is-uppercase is-size-7 mb-3"><span>{{ . }}</span></p>{{ end }}
 		<h2 class="is-size-4 is-family-secondary has-text-weight-semibold">

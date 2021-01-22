@@ -8,6 +8,13 @@
 		</a>
 	</div>
 	{{ end }}
+	{{ with .Params.videobanner }}
+	{{ $id := index (split . " ") 0 }}
+	{{ $ratio := index (split . " ") 1 }}
+	<div>
+		{{ partial "micro/vimeo" (dict "id" $id "ratio" $ratio) }}
+	</div>
+	{{ end }}
 	<div class="column">
 		<a href="{{ $href }}" class="has-text-white">{{ .Title }}</a>
 	</div>
