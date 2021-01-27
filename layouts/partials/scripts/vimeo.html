@@ -2,9 +2,11 @@
 {{ if .Site.Params.vimeo.enable }}
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
-	var iframe = document.getElementById('vimeo');
+	var iframe = document.getElementById('hero-video');
+	console.log('iframe:', iframe);
 	if (iframe) {
 		var player = new Vimeo.Player(iframe);
+		player.play();
 
 		player.on('play', function () {
 			player.setLoop(true);

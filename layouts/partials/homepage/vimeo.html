@@ -1,7 +1,7 @@
 {{ if isset .Site.Params "vimeo" }}
 {{ if .Site.Params.vimeo.enable }}
 <section class="section mb-6 px-0 is-hidden-print">
-	{{ partial "micro/vimeo" (dict "id" .Site.Params.vimeo.id "ratio" (default "" .Site.Params.vimeo.ratio) )}}
+	{{ partial "micro/vimeo" (dict "id" .Site.Params.vimeo.id "ratio" (default "" .Site.Params.vimeo.ratio) "elementId" "hero-video" )}}
 </section>
 {{ end }}
 {{ end }}

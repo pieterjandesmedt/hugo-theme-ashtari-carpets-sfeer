@@ -1,6 +1,6 @@
 {{ $padPercent := mul 100 (div (float (default 9 (index (split .ratio "x") 1) )) (float (default 16 (index (split .ratio "x") 0)))) }}
-<div class="video{{ with .class }} {{ . }}{{ end }}"{{ with $padPercent }}style="padding-bottom: {{ $padPercent }}%"{{ end }}>
-	<iframe title="Video" id="vimeo"
-		src='//player.vimeo.com/video/{{ with .id }}{{ . }}{{ end }}?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;autoplay=1&amp;loop=0&amp;badge=0'
+<div class="video{{ with .class }} {{ . }}{{ end }}"{{ with $padPercent }} style="padding-bottom: {{ $padPercent }}%"{{ end }}>
+	<iframe title="Video"{{ with .elementId }} id="{{ . }}"{{ end }}
+		src='https://player.vimeo.com/video/{{ with .id }}{{ . }}{{ end }}?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;loop=0&amp;badge=0'
 		frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
