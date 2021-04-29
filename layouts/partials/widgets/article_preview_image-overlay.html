@@ -20,7 +20,7 @@
 		<h2 class="is-size-4 is-family-secondary has-text-weight-semibold">
 			<a href="{{ $href }}" class="has-text-dark">{{ .Title }}</a>
 		</h2>
-		<h3 class="is-size-5 has-text-grey mb-3">{{ .Description }}</h3>
+		<h3 class="is-size-5 is-hidden-mobile has-text-grey mb-3">{{ .Description }}</h3>
 		<div class="content is-hidden-touch mb-1">{{ .Summary }}</div>
 		<a href="{{ $href }}" class="button is-small is-dark is-outlined is-uppercase mt-1">
 			{{ i18n "_Continue reading" }}
