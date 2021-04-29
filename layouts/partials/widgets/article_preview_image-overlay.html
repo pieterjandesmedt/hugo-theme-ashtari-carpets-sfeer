@@ -15,7 +15,7 @@
 		{{ partial "micro/vimeo" (dict "id" $id "ratio" $ratio) }}
 	</div>
 	{{ end }}
-	<div class="is-overlay box m-6{{ with .Params.isHiddenOverlay }}{{ if . }} is-hidden{{ end }}{{ end }}">
+	<div class="is-overlay box m-6 m-6-desktop m-3-tablet m-2-mobile{{ with .Params.isHiddenOverlay }}{{ if . }} is-hidden{{ end }}{{ end }}">
 		{{ with .Params.category }}<p class="is-uppercase is-size-7 mb-3"><span>{{ . }}</span></p>{{ end }}
 		<h2 class="is-size-4 is-family-secondary has-text-weight-semibold">
 			<a href="{{ $href }}" class="has-text-dark">{{ .Title }}</a>
