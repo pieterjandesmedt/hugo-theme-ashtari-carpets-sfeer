@@ -1,0 +1,51 @@
+{{ $imageLocation := "https://s3.eu-central-1.amazonaws.com/images-ashtaricarpets" }}
+
+<div class="column is-half is-one-third-tablet is-one-quarter-desktop is-one-fifth-fullhd">
+	<a href="{{ .article.Permalink }}">
+		<h4 class="is-size-4 mb-2">{{ .article.Title }}</h4>
+		<div class="product-overview card is-4by5" :class="`${product.category}`">
+			{{ with .data.Foto_01 }}
+				{{ partial "micro/image" (dict "filename" (print . ".jpg")) }}
+			{{ end }}
+			{{/*  <!--<div class="is-favorite" v-if="isFav">
+				<i class="fa fa-heart" @click="removeFromFavs(product)"></i>
+			</div>
+			<div class="discount" v-if="product.discount">
+				<span class="percent">-Math.round(product.discount)%</span>
+			</div>
+			<div class="option" v-if="product.option !== undefined">
+				<translate>option</translate>
+			</div>
+			<div class="sold" v-if="product.sold !== undefined">
+				<translate>sold</translate>
+			</div>
+			<div class="overlay">
+				<div class="product-title" @click="goThere()">
+					<h5 v-if="product.title">{{ product.title }}</h5>
+					<h5 v-if="product.title === undefined">{{ product.id }}</h5>
+					<p v-if="product.subtitle">{{ product.subtitle }}</p>
+					<p v-if="product.title !== undefined"><small>{{ product.id }}</small></p>
+				</div>
+				<div class="size" @click="goThere()">
+					<p v-if="!userRugSizeKnown && product.custommade === 'yes'" v-translate>Custom made!</p>
+					<p v-if="userRugSizeKnown && product.custommade === 'yes'">
+						<translate>Your dimensions:</translate><br />
+						<span class="length">{{ length }}</span> x
+						<span class="width">{{ width }}</span> cm
+					</p>
+					<p v-if="product.custommade !== 'yes'">
+						<span class="length">{{ product.length }}</span> x
+						<span class="width">{{ product.width }}</span> cm
+					</p>
+				</div>
+				<div class="price">
+					<product-display-price :product="product"></product-display-price>
+				</div> -->  */}}
+			<div class="buttons is-centered" style="margin-top: -4em;">
+				<button class="button is-primary" style="box-shadow: 0px 0px 1em rgba(0,0,0,0.5);">
+					€ {{ math.Round (index .data "Verkoopprijs per m2 (incl. 21%btw)") }} / m&sup2;
+				</button>
+			</div>
+		</div>
+	</a>
+</div>

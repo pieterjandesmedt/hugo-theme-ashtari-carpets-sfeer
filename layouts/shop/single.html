@@ -1,0 +1,110 @@
+{{ $dataJ := getJSON "https://ashtari-carpets-functions.netlify.com/.netlify/functions/designers-and-brands" }}
+{{ $data := index (where $dataJ ".Artikelnummer webshop" (trim .Params.id " ")) 0 }}
+{{ $sizes := slice (dict "length" 240 "width" 170)
+(dict "length" 300 "width" 200)
+(dict "length" 350 "width" 250)
+(dict "length" 400 "width" 300)
+ }}
+
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+{{ partial "head" . }}
+
+<body class="single-page">
+	<header>
+		{{ partial "nav.html" . }}
+	</header>
+
+	<section class="section my-6">
+		<div class="container is-widescreen">
+			<div class="columns">
+
+				<!-- *** LEFT COLUMN *** -->
+				<div class="column is-8 is-full-print">
+
+					<h1 class="is-family-secondary is-size-3 has-text-weight-semibold">{{ .Title }}</h1>
+
+					<p class="is-uppercase has-text-grey mb-5 is-hidden-print">
+
+						{{ with .Params.category }}
+						{{ . }} <span class="sep">|</span>
+						{{ end }}
+
+						{{ with .Date }}{{ .Format "2/1/2006" }} <span class="sep">|</span>{{ end }}
+						{{ i18n "readingTime" .ReadingTime }}
+						{{ if .IsTranslated }}
+						<span class="sep">|</span>
+						{{ with .Translations }}
+						{{ if gt (len .) 0 }}
+						{{ partial "micro/article_translations.html" . }}
+						{{ end }}
+						{{ end }}
+						{{ end }}
+					</p>
+
+					<div id="post-content" class="content mb-6">
+						<div class="prices mb-3">
+						{{ $pricePerM2 := index $data "Verkoopprijs per m2 (incl. 21%btw)"}}
+						{{ with $pricePerM2 }}
+							{{/*  Standard size: € {{ math.Round . }} / m&sup2;<br/>  */}}
+							{{ range $sizes}}
+								<input type="radio" name="size" value="{{ .length }}x{{ .width }}"/>
+								{{ .length }}cm x {{ .width }}cm: € {{ math.Round (div (mul (mul .length .width) $pricePerM2) 10000.0)  }}<br/>
+							{{ end }}
+							<input type="radio" name="size" value="custom"/>
+							Custom size: € {{ math.Round (mul . 1.10) }} / m&sup2;<br/>
+						{{ end }}
+						</div>
+						{{ .Content }}
+						{{ with .Params.images }}
+						{{ partial "micro/image_gallery" . }}
+						{{ end }}
+					</div>
+
+					<div class="columns mb-6 is-hidden-print">
+						{{ if .Params.tags }}
+						<div id="article-tags" class="column">
+							<h3 class="is-family-secondary is-size-4 mb-3 has-text-weight-semibold">
+								{{ i18n "_Tags" }}</h3>
+							<div>
+								{{ range (.GetTerms "tags") }}
+								{{ partial "micro/tag" . }}
+								{{ end }}
+							</div>
+						</div>
+						{{ end }}
+						<div id="social" class="column">
+							<h3 class="is-family-secondary is-size-4 mb-3 has-text-weight-semibold">
+								{{ i18n "_Share this article" }}</h3>
+							<div>
+								{{ partial "widgets/social-buttons.html" . }}
+							</div>
+						</div>
+					</div>
+					{{ if .Site.DisqusShortname }}
+					<div id="comments" class="is-hidden-print">
+						<h3 class="is-family-secondary is-size-4 mb-3 has-text-weight-semibold">{{ i18n "_Comments" }}
+						</h3>
+						{{ template "_internal/disqus.html" . }}
+					</div>
+					{{ end }}
+				</div>
+
+				<div class="column is-1 is-hidden-print"></div>
+
+				<div class="column is-hidden-print">
+					{{ partial "sidebar.html" . }}
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+	{{ partial "footer.html" . }}
+	{{ partial "scripts.html" . }}
+	{{ partial "scripts_single_page.html" . }}
+</body>
+
+</html>
