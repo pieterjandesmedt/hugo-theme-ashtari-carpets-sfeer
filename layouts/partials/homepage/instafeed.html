@@ -3,7 +3,13 @@
 	<div class="container is-widescreen">
 		{{ partial "micro/section-header" .Site.Params.instagram }}
 
-		<div id="instafeed" class="columns is-mobile is-multiline"></div>
+		<div id="instagram" class="columns is-mobile is-multiline">
+		{{ range seq 12 }}
+			<div class="column is-2-desktop is-4-tablet is-6-mobile">
+				<img src="https://profilepageimages.usecue.com/images/ashtaricarpets/{{.}}.jpg"/>
+			</div>
+		{{ end }}
+		</div>
 
 		<div class="has-text-centered">
 			<a href="{{ .Site.Params.social.instagram }}" target=_blank
