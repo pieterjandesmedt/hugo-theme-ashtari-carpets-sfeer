@@ -3,22 +3,18 @@
 <section class="section my-6 hero background-image-fixed craftsmanship is-medium is-hidden-print">
 	<div class="hero-body">
 		<div class="container has-text-centered">
-			<a href="{{ .Site.Params.craftsmanship.link_url | relLangURL }}" class="has-text-white is-size-1" title="{{ .Site.Params.craftsmanship.title | safeHTML }}">
-				<i class="icon icon-play-circle-o"></i>
-			</a>
-			<h1 class="title is-family-secondary is-size-2">
-				<a href="{{ .Site.Params.craftsmanship.link_url | relLangURL }}" class="has-text-white">
+			<a href="{{ .Site.Params.craftsmanship.link_url | relLangURL }}" class="has-text-white" title="{{ .Site.Params.craftsmanship.title | safeHTML }}">
+				<i class="icon is-large icon-youtube-play" style="height: 6rem; width: 6rem; font-size: 6rem; text-shadow: none;"></i>
+			<h1 class="title is-family-secondary is-size-2 has-text-white">
 					{{ .Site.Params.craftsmanship.title | safeHTML }}
-				</a>
 			</h1>
-			<h2 class="subtitle is-size-3">
-				<a href="{{ .Site.Params.craftsmanship.link_url | relLangURL }}" class="has-text-white">
+			<h2 class="subtitle is-size-3 has-text-white">
 					{{ .Site.Params.craftsmanship.subtitle | safeHTML }}
-				</a>
 			</h2>
-			<a href="{{ .Site.Params.craftsmanship.link_url | relLangURL }}" class="button is-white is-uppercase mt-3">
+			<span class="button is-white is-uppercase mt-3">
 				{{ .Site.Params.craftsmanship.link_text }}
-			</a>
+			</span>
+		</a>
 		</div>
 	</div>
 </section>
