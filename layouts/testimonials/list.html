@@ -17,7 +17,7 @@
 					<!-- *** LEFT COLUMN *** -->
 					<div class="column" id="blog-listing-medium">
 
-						{{ partial "micro/section-header" (dict "title" .Title) }}
+						{{ partial "micro/section-header" (dict "title" "Realisaties") }}
 
 						{{ $featuredposts := (sort (where .Site.RegularPages "Section" "testimonials") "File.Path").Reverse }}
 
