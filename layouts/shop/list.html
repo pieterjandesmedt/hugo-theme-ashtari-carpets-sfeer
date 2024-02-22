@@ -1,5 +1,4 @@
 {{ $dataJ := getJSON "https://ashtari-carpets-functions.netlify.com/.netlify/functions/designers-and-brands" }}
-
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
   {{ partial "head.html" . }}
@@ -14,11 +13,15 @@
             <!-- *** LEFT COLUMN *** -->
               {{ $paginator := .Paginate (.Data.Pages) }}
 
-			  {{ range $paginator.Pages }}
-			    {{ $article := . }}
-			  	{{ range first 1 (where $dataJ ".Artikelnummer webshop" (trim $article.Params.id " ")) }}
-			  		{{ partial "shop/product-overview" (dict "article" $article "data" .) }}
+			  {{ if ne $dataJ nil }}
+				{{ range $paginator.Pages }}
+				{{ $article := . }}
+					{{ range first 1 (where $dataJ ".Artikelnummer webshop" (trim $article.Params.id " ")) }}
+						{{ partial "shop/product-overview" (dict "article" $article "data" .) }}
+					{{ end }}
 				{{ end }}
+			  {{ else }}
+			  	No designers & brands found.
 			  {{ end }}
           </div>
 		  <div>
@@ -39,7 +42,9 @@
 				<!-- <li class="previous disabled"><span class="btn">{{ i18n "_Newer" }} &rarr;</span></li> -->
 			{{ end }}
 			</ul>
+			{{ if ne $dataJ "nil" }}
 			<pre>{{ $dataJ | jsonify (dict "indent" "  ") }}</pre>
+			{{ end }}
         </div>
       </section>
     </div>

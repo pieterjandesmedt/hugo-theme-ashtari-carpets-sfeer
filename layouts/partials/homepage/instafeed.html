@@ -1,5 +1,5 @@
 {{ if isset .Site.Params.social "instagram" }}
-<section class="section my-6 is-hidden-print">
+<!--section class="section my-6 is-hidden-print">
 	<div class="container is-widescreen">
 		{{ partial "micro/section-header" .Site.Params.instagram }}
 
@@ -19,5 +19,32 @@
 			</a>
 		</div>
 	</div>
+</section-->
+
+<section class="section my-6 is-hidden-print">
+	<div class="container is-widescreen">
+		{{ partial "micro/section-header" .Site.Params.instagram }}
+
+		<div id="instagram" class="columns is-mobile is-multiline">
+			<!-- SnapWidget -->
+			<script src="https://snapwidget.com/js/snapwidget.js"></script>
+			<iframe src="https://snapwidget.com/embed/1059437" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:100%; "></iframe>
+		</div>
+
+		<div class="has-text-centered">
+			<a href="{{ .Site.Params.social.instagram }}" target=_blank
+				class="button is-dark is-outlined is-uppercase mt-3">
+				<i class="icon icon-instagram"></i>
+				<span>{{ i18n "_More on instagram" }}</span>
+			</a>
+		</div>
+	</div>
 </section>
+
+<style>
+  a.snapwidget-widget-link {display: block; position: relative;}
+  a.snapwidget-widget-link > div {pointer-events: none; position: absolute; width: 100%; height: 100%; z-index: 2; background: transparent;}
+  a.snapwidget-widget-link > iframe {position: relative; z-index: -1; display: block; aspect-ratio: 5}
+</style>
+
 {{ end }}

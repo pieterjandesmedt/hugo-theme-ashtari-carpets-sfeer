@@ -1,4 +1,5 @@
 {{ $dataJ := getJSON "https://ashtari-carpets-functions.netlify.com/.netlify/functions/designers-and-brands" }}
+{{ if ne $dataJ nil }}
 {{ $data := index (where $dataJ ".Artikelnummer webshop" (trim .Params.id " ")) 0 }}
 {{ $sizes := slice (dict "length" 240 "width" 170)
 (dict "length" 300 "width" 200)
@@ -43,6 +44,7 @@
 						{{ end }}
 					</p>
 
+					{{ if ne $dataJ "nil" }}
 					<div id="post-content" class="content mb-6">
 						<div class="prices mb-3">
 						{{ $pricePerM2 := index $data "Verkoopprijs per m2 (incl. 21%btw)"}}
@@ -61,6 +63,7 @@
 						{{ partial "micro/image_gallery" . }}
 						{{ end }}
 					</div>
+					{{ end }}
 
 					<div class="columns mb-6 is-hidden-print">
 						{{ if .Params.tags }}
@@ -108,3 +111,4 @@
 </body>
 
 </html>
+{{ end }}
